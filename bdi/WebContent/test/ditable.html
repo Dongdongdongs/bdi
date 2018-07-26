@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	td{
+		cursor:pointer;
+	}
+</style>
+</head>
+<body>
+로우갯수 : <input type="text" id="rowCnt"><br>
+컬럼갯수 : <input type="text"	id="colCnt"><br>
+<button type="button" onclick="makeTable()">테이블 생성</button>
+<div id="tDiv">
+</div>
+<script>
+	/* var str = "<div>제가 나올까요?</div>";
+	document.write(str); */
+function makeTable(){
+	var tDiv = document.querySelector('#tDiv');
+	var tableHtml = '<table border="1">';
+	var row1 = document.querySelector('#rowCnt');
+	var col1 = document.querySelector('#colCnt');
+	var cnt = 1;
+	var totalCnt = parseInt(rowCnt.value) * parseInt(colCnt.value);
+	
+	
+	var bombCnt = Math.floor(Math.random() * totalCnt) + 1;
+	var bombCnt1 = Math.floor(Math.random() * totalCnt) + 1;
+	
+	
+	for(var i=0;i<rowCnt.value;i++){
+		tableHtml += '<tr>';
+		for(var j=0;j<colCnt.value;j++){
+			if(cnt==bombCnt){
+				tableHtml += '<td onclick="check(this,1)">■</td>';	
+			} else if(cnt==bombCnt1){
+				tableHtml += '<td onclick="check(this,2)">■</td>';	
+			} else {
+				tableHtml += '<td onclick="check(this)">■</td>';
+			}
+			cnt++;
+		}
+		tableHtml += '</tr>';
+	}
+	tableHtml += '</table>';
+	tDiv.innerHTML = tableHtml;
+	
+	
+	/* 	
+	var row = document.getElementById("rowCnt");
+	alert(row.value);
+	
+	var col = document.getElementById("colCnt");
+	alert(col.value); */
+
+/* 	var cnt = document.querySelectorAll('input');
+	alert(cnt[0].value);
+	alert(cnt[1].value); */
+}
+	
+	function check(obj,isBomb){
+		if(isBomb){
+			alert("찾았다 폭탄!!");
+			return;
+		}
+		obj.innerHTML='X';
+	}
+	
+	
+	/* tableHtml += '<tr>';
+	tableHtml += '<td>하하하</td>';
+	tableHtml += '<td>허허허</td>';
+	tableHtml += '</tr>';
+	tableHtml += '</table>';
+	tDiv.innerHTML = tableHtml; */
+</script>
+
+</body>
+</html>
