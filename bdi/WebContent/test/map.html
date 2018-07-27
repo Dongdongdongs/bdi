@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	var map = new Map();
+	map.set('이름','홍길동');
+	map.set('나이','33');
+	map.set('주소','강원도');
+	
+	alert(map.size);
+	alert(map.get('이름'));
+	map.delete('이름');			// 키값, 벨류 삭제
+	alert(map.get('이름'));
+	
+	map.clear();				// 메모리를 유지한체로 안에있는 내용만 삭제
+	alert(map.size);		
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div id="rDiv"></div>
+<script>
+	var div = document.querySelector('#rDiv');
+	var str = '<table border = "1">';
+	for(var i=1;i<=9;i++){
+		if(i % 3 == 1){
+			str += '<tr>';
+		}
+		str += '<td>' + i + '</td>';
+		if(i%3==0){
+			str += '</tr>';
+		}
+	}
+	str += '</table>';
+	div.innerHTML = str;
+	
+	var str1 = '<table border = "1">';
+	for(var i=0;i<3;i++){
+		str1 += '<tr>';
+		for(var j=1;j<=3;j++){
+			str1 += '<td>'+(j+i*3)+'</td>';
+			}
+		str1 += '</tr>';
+	}
+	str1 += '</table>';
+	div.innerHTML = str1;
+</script>
+</body>
+</html>

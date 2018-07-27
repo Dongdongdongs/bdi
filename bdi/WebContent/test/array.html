@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Array Test</title>
+</head>
+<body>
+<script>
+	var arr = new Array();
+	arr.push("1");
+	arr.push("2");
+	
+/* 	alert(arr.length);
+	alert(arr[0]); */
+	
+	arr = ["1","2","3"];		
+	arr.shift();				// 0번째 방을 없애고 다 하나씩 앞으로 당김, 3번째 방 없음
+	arr.unshift('1');			// 0번째 방에 다시 끼워넣음
+	
+	arr.pop();					// 마지막꺼를 삭제함
+	arr.push('3');				// 마지막에 추가, 팝 반대
+	
+	arr.splice(1,1);			// 1번 인덱스에 있는 항목을 1개 삭제
+	
+	
+	for(var i=0;i<arr.length;i++){
+		document.write(arr[i]+'<br>');
+	}
+</script>
+</body>
+</html>
