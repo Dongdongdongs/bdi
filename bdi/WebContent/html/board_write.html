@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="/html/write.jsp" onsubmit="return check()">
+	<table border="1">
+		<tr>
+			<th colspan="2">글쓰기</th>
+		</tr>
+		<tr>
+			<th>제목</th>
+			<td><input type="text" maxlength="50" required></td>
+		</tr>
+		<tr>
+			<th>내용</th>
+			<td>
+				<textarea cols="40" rows="20"></textarea>
+			</td>		
+		</tr>
+		<tr>
+			<th>작성자</th>
+			<td><input type="text" disabled></td> <!-- html에서 만든거여서 작동안함 jsp 에서 작동해야함 -->
+		</tr>
+		<tr>
+			<td colspan="2" style="text-align:center;"><button>등록</button></td>
+		</tr>
+		</table>
+</form>
+
+</body>
+</html>
